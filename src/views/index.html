@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"> 
+		
+      <script src="/js/config.js"></script>
+      <script src="/js/public_config.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script src="/js/transaction.js" type="text/javascript"></script>   
+</head>
+
+<body >
+    <div class="row">
+    
+
+    <div class="col-lg-5 col-md-5">
+      
+           <div class="col-lg-8 col-md-8" style="margin:auto">
+    
+            <!--Login form-->
+           <div id="login_form" class="panel panel-default" style="background-color: #e9ecef;margin-top: 10%">
+                        <div class="panel-body">
+                                <div class="jumbotron">
+                                        <div class="formHeight">
+                                            <h2 class="display-4">Login</h2></div></div>
+                                            <div class="col-lg-8 col-md-8" style="margin:auto">
+                                            <div class="form-group">
+                                                <label>Username</label>
+                                                <input type="text" id="username" name="username" required class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="password" id="password" name="password" required class="form-control">
+                                                </div>
+
+
+                                                <br>
+                                                <div style="display:flex">
+                                            <button class="btn btn-primary" style="float:left"  onClick="loginUser()">Submit</button>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <button class="btn btn-danger" style="float:right" onClick="signup()">Register</button>
+                                                
+                                            </div>
+                                            <br><br>
+                               
+
+                                        </div>
+                                            </div>
+                                
+
+                        </div>
+<!------------------------------------------------------------------------------------>
+                      
+        
+        
+
+
+        <!--Signup form-->
+            <div id="signup_form" class="panel panel-default" style="background-color: #e9ecef;;margin-top: 10%">
+                    <div class="panel-body">
+                            <div class="jumbotron">
+                                    <div class="formHeight">
+                                        <h2 class="display-4">Signup</h2></div></div>
+                                        <div class="col-lg-8 col-md-8" style="margin:auto">
+                                        <div class="form-group">
+                                            <label>Username</label>
+                                            <input type="text" id="uname" name="uname" class="form-control">
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                                <label>Fullname</label>
+                                                <input type="text" id="fname" name="fname" class="form-control">
+                                            </div>
+
+
+                                        <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" id="pword" name="pword" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                    <label>Metamask A/C Key</label>
+                                                    <input type="text" id="pubkey" name="pubkey" class="form-control">
+                                                    <small style="color:red">Metamask is a wallet to perform transactions on ethereum blockchain. Create a new Account,copy the Account address and paste above.</small>
+          
+                                                </div>
+                                                
+                                            <br>
+                                            <div style="display:flex">
+                                        <button class="btn btn-primary" onClick="newUser()">Create Account</button>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                               
+                                        <button class="btn btn-danger" onClick="back()">Back</button>
+                                    </div>
+                                        <br>
+                                        <br>
+
+                                    </div>
+                                 
+                                        </div>
+                               
+                    </div>
+                    <!---------------------------------------------------------------------------------->
+
+
+                <!--Homepage left side-->
+                    <div id="homepage" class="panel panel-default" style="background-color: #e9ecef;;margin-top: 10%">
+                            <div class="panel-body">
+                                    <div class="jumbotron">
+                                            <div class="formHeight">
+                                                <h2 class="display-4" id="user" name="user"></h2></div></div>
+                                                <div class="col-lg-8 col-md-8" style="margin:auto">
+                                                
+        
+        
+
+                                         
+                                                </div>
+                                       
+                            </div>
+                                </div>
+                        <!---------------------------------------------------------------------------------->
+
+
+
+
+    </div>
+    </div>
+
+
+        <!--Home page right-side, purchase view add all items-->
+        
+        <div class="col-lg-6 col-md-6">
+                <div id="market">
+                <nav class="navbar navbar-light" style="background-color: #e9ecef;margin-top:5%">
+                        
+                        <button class="btn btn-default navbar-brand" onClick="home()" id="navhome" name="navhome">Marketplace</button>
+                        <button class="btn btn-default"  onClick="addItem()" id="navadditem" name="navadditem" >Add Item</button>
+                       
+                        
+                        <button class="btn btn-default" onClick="viewHistory()">History</button>
+                        <button class="btn btn-default" onClick="viewreqTokens()">Tokens</button>
+                        <button class="btn btn-primary" onClick="viewProfile()">Profile</button>
+                        
+                        <button class="btn btn-danger"  onClick="logoutUser()">Logout</button>
+                        
+                      </nav>
+
+
+                      
+                        <br>
+                        <div id="home" class="panel panel-default" style="background-color: #e9ecef;height: 600px; overflow-y: scroll"><br>
+                            <div id="allItems"class="panel-body">
+
+                            </div>
+                          </div>
+                 
+                    
+              
+
+
+                      <div id="viewProfile"  class="panel panel-default">
+                            <div class="col-lg-6 col-md-6" style="background-color: #e9ecef;margin:auto">
+                            <div id="profile"class="panel-body">
+
+                                </div>
+                     
+                        </div>    </div>
+                  
+
+
+
+
+                    
+                  <div id="viewHistory" class="panel panel-default" style="background-color: #e9ecef;height: 600px; overflow-y: scroll"">
+                        <div id="allHistory"class="panel-body">
+
+                            </div>
+                 
+                    </div>    
+
+
+
+                    <div id="reqTokens" style="background-color: #e9ecef;">
+                           
+                        
+                        &nbsp;&nbsp;<h5 id="avltokn" style="margin-inline-start: 10px;"></h5>
+                        
+                        <h5>&nbsp;&nbsp;Request Tokens</h5>
+                        <div class="col-lg-6 col-md-6" style="margin:auto">
+                        <div class="form-group">
+
+
+                                <label>Tokens</label>
+                                <input type="text" id="noOfTokens" name="noOfTokens" required class="form-control">
+                            </div>
+                        
+                           
+
+                                <button class="btn btn-primary"   onClick="sendreq()">Send Request</button>
+                           </div>
+                           <br><br>
+
+                 
+                    </div> 
+
+
+
+                    <div id="addeditItem" style="background-color: #e9ecef;">
+                            <h1>&nbsp;&nbsp;Add Item</h1>
+                            <div class="col-lg-6 col-md-6" style="margin:auto">
+                            <div class="form-group">
+                                    <label>Item</label>
+                                    <input type="text" id="itemName" name="itemName" required class="form-control">
+                                </div>
+                            
+                                <div class="form-group">
+                                        <label>Price(in tokens)</label>
+                                        <input type="text" id="itemPrice" name="itemPrice" required class="form-control">
+                                    </div>
+
+                                    <button class="btn btn-primary"   onClick="addNewItem()">Add Item</button>
+                               </div>
+                               <br><br>
+
+                     
+                        </div> 
+
+
+
+
+
+        </div>
+
+        <div id="admin_home">
+            <nav class="navbar navbar-light" style="background-color: #e9ecef;margin-top:5%">
+                        
+                <button class="btn btn-default navbar-brand" onClick="pendreq()" id="navhome" name="navhome">Pending Requests</button>
+                <button class="btn btn-default"  onClick="accreq()" id="navadditem" name="navadditem" >Accepted Requests</button>
+               
+                
+               
+                <button class="btn btn-primary" onClick="viewAdminProfile()">Profile</button>
+                
+                <button class="btn btn-danger"  onClick="logoutUser()">Logout</button>
+                
+              </nav>
+
+              <br>
+
+              
+              <div id="viewAdminProfile"  class="panel panel-default">
+                <div class="col-lg-6 col-md-6" style="background-color: #e9ecef;margin:auto">
+                <div id="adminProfile"class="panel-body">
+
+                    </div>
+         
+            </div>    </div>
+
+
+
+            <div id="viewPendReq" class="panel panel-default" style="background-color: #e9ecef;height: 600px; overflow-y: scroll"">
+                <div id="PendReq"class="panel-body">
+
+                    </div>
+         
+            </div>  
+
+            <div id="viewAccReq" class="panel panel-default" style="background-color: #e9ecef;height: 600px; overflow-y: scroll"">
+                <div id="AccReq"class="panel-body">
+
+                    </div>
+         
+            </div>  
+      
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<script>
+
+var noofUsers;
+$(document).ready(function() {
+
+$("#signup_form").hide();
+$("#login_form").show();
+$("#homepage").hide();
+$("#market").hide();
+$("#addeditItem").hide();
+$("#admin_home").hide();
+$("#reqTokens").hide();
+
+mContract.getNoOfUsers(function(err,res){
+        if(res!=null)
+        {
+         
+            noofUsers=res;
+            console.log("Document.ready: "+res);
+                 }
+                 
+              });
+
+
+console.log(sessionStorage.getItem('username'));
+
+
+});
+
+
+
+
+
+function signup()
+{
+    
+    $("#login_form").hide();
+    $("#signup_form").show();
+    $("#homepage").hide();
+}
+
+function onLoadFunction()
+    {
+      $("#user").text(name);
+      $("#signup_form").hide();
+      $("#login_form").hide();
+      $("#homepage").show();
+      $("#market").show();
+      $("#market").show();
+      $("#reqTokens").hide();
+      $("#home").show();
+      home();
+     
+      $("#viewProfile").hide();
+$("#viewHistory").hide();
+
+
+    }
+
+    window.onbeforeunload = function(event) {
+    event.returnValue = "Your custom message.";}
+
+</script>
+
+
+</body>
+
+
+
+
+
+</html>
